@@ -4,6 +4,7 @@ import reportWebVitals from './reportWebVitals';
 import {QueryClient, QueryClientProvider} from "react-query";
 import {ReactQueryDevtools} from "react-query/devtools";
 import {ProjectPanel} from "./components/project_panel/ProjectPanel";
+import {TitleText} from "./components/title_text/TitleText";
 
 const root = ReactDOM.createRoot(
     document.getElementById('root') as HTMLElement
@@ -14,6 +15,7 @@ const queryClient = new QueryClient()
 root.render(
     <React.StrictMode>
         <QueryClientProvider client={queryClient}>
+            <TitleText/>
             <ProjectPanel/>
             <ReactQueryDevtools/>
         </QueryClientProvider>
