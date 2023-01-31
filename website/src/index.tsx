@@ -1,13 +1,23 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import reportWebVitals from './reportWebVitals';
+import {QueryClient, QueryClientProvider} from "react-query";
+import {ReactQueryDevtools} from "react-query/devtools";
+import {ProjectPanel} from "./components/project_panel/ProjectPanel";
 
 const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
+    document.getElementById('root') as HTMLElement
 );
+
+const queryClient = new QueryClient()
+
 root.render(
-  <React.StrictMode>
-  </React.StrictMode>
+    <React.StrictMode>
+        <QueryClientProvider client={queryClient}>
+            <ProjectPanel/>
+            <ReactQueryDevtools/>
+        </QueryClientProvider>
+    </React.StrictMode>
 );
 
 // If you want to start measuring performance in your app, pass a function
