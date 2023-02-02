@@ -1,0 +1,15 @@
+.cv-table-panel {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+    width: 500px;
+    padding: 8px;
+    gap: 8px;
+}
+
+.cv-icon-column {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}

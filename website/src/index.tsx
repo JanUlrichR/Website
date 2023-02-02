@@ -5,6 +5,7 @@ import {QueryClient, QueryClientProvider} from "react-query";
 import {ReactQueryDevtools} from "react-query/devtools";
 import {ProjectPanel} from "./components/project_panel/ProjectPanel";
 import {TitleText} from "./components/title_text/TitleText";
+import {CVTable} from "./components/cv_table/CVTable";
 
 const root = ReactDOM.createRoot(
     document.getElementById('root') as HTMLElement
@@ -16,6 +17,7 @@ root.render(
     <React.StrictMode>
         <QueryClientProvider client={queryClient}>
             <TitleText/>
+            <CVTable/>
             <ProjectPanel/>
             <ReactQueryDevtools/>
         </QueryClientProvider>
