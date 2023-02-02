@@ -11,6 +11,8 @@ import TableBody from "@mui/material/TableBody";
 import TableContainer from "@mui/material/TableContainer";
 
 import "./ProjectPanel.css"
+import {Gallery} from "react-photoswipe-gallery";
+import 'photoswipe/dist/photoswipe.css'
 
 const fetchProjectsMock = async (): Promise<Project[]> => {
     return [
@@ -102,24 +104,26 @@ export const ProjectPanel: React.FC<{}> = () => {
 
     return (
         <div className={"project-panel"}>
-            <TableContainer component={Paper}>
-                <Table aria-label="collapsible table">
-                    <TableHead>
-                        <TableRow>
-                            {/*<TableCell size={"small"}>Icon </TableCell>
+            <Gallery id={"project-gallery"}>
+                <TableContainer component={Paper}>
+                    <Table aria-label="collapsible table">
+                        <TableHead>
+                            <TableRow>
+                                {/*<TableCell size={"small"}>Icon </TableCell>
                         <TableCell size={"small"}>Time </TableCell>
                         <TableCell size={"small"}>Type</TableCell>
                         <TableCell>Description</TableCell>
                         <TableCell size={"small"}/>*/}
-                        </TableRow>
-                    </TableHead>
-                    <TableBody>
-                        {data.map((project, index) => (
-                            <ProjectInformation key={index} project={project}/>
-                        ))}
-                    </TableBody>
-                </Table>
-            </TableContainer>
+                            </TableRow>
+                        </TableHead>
+                        <TableBody>
+                            {data.map((project, index) => (
+                                <ProjectInformation key={index} project={project}/>
+                            ))}
+                        </TableBody>
+                    </Table>
+                </TableContainer>
+            </Gallery>
         </div>
     )
 }
