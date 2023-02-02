@@ -8,13 +8,21 @@ const padding = 8
 
 const TechAvatar: React.FC<{ tech: Tech }> = ({tech}) => {
     return (
-        <a href={tech.link} style={{textDecoration: "none"}}>
-            <Avatar style={{marginLeft: "-8px"}}>
-                <Tooltip title={tech.name} arrow>
+        <Tooltip title={tech.name} arrow>
+            <a href={tech.link} style={{textDecoration: "none"}}>
+                <Avatar style={{marginLeft: "-8px"}} src={tech.icon} imgProps={{
+                    height: 50,
+                    width: 50, sx: {
+
+                        objectFit: "contain"
+                    }
+                }} sx={{bgcolor:"#525252"}}>
+
                     <div>{tech.name}</div>
-                </Tooltip>
-            </Avatar>
-        </a>
+
+                </Avatar>
+            </a>
+        </Tooltip>
     )
 }
 
@@ -40,13 +48,13 @@ export const TechGroup: React.FC<{ technologies: Tech[] }> = ({technologies}) =>
     return (
         <div>
             <AvatarGroup max={4} onClick={clickAdditionalTech}>
-                {technologies.map((tech,index) => <TechAvatar key={index} tech={tech}/>)}
+                {technologies.map((tech, index) => <TechAvatar key={index} tech={tech}/>)}
             </AvatarGroup>
             {showList && (
                 <Paper onMouseLeave={disableAdditionalTech} elevation={3} className={"project-card-additional"}
                        style={{left: position[0] + "px", top: position[1] + "px", width: position[2] + "px"}}>
                     <List>
-                        {technologies.slice(3).map((tech,index) =>
+                        {technologies.slice(3).map((tech, index) =>
                             <ListItem key={index}>
                                 <ListItemAvatar>
                                     <TechAvatar tech={tech}/>

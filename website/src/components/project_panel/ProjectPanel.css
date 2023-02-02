@@ -3,42 +3,11 @@
     justify-content: center;
     flex-direction: column;
 
-    width: 500px;
+    width: 700px;
     padding: 8px;
     gap: 8px;
 }
 
-
-.project-card {
-    display: grid;
-    grid-template-columns:1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-
-    grid-template-areas:
-            "Image Title Avatars"
-            "Image Title Buttons"
-            "Expand Expand Expand";
-}
-
-.project-card-title {
-    grid-area: Title;
-}
-
-.project-card-image {
-    grid-area: Image;
-}
-
-.project-card-technologies {
-    grid-area: Avatars;
-}
-
-.project-card-buttons {
-    grid-area: Buttons;
-}
-
-.project-card-expand {
-    grid-area: Expand;
-}
 
 .project-card-additional {
     position: absolute;

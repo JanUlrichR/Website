@@ -11,7 +11,7 @@ const Project = z.object({
     title: z.string(),
     url: z.string().url(),
     description: z.string(),
-    previewImage: z.any(),
+    previewImage: z.string().url(),
     techs: z.array(Tech)
 });
 

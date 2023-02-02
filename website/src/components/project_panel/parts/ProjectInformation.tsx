@@ -2,8 +2,9 @@ import React from "react";
 import {Project} from "../types";
 import {TechGroup} from "./TechGroup";
 import {
+    Box,
     Card, CardActions,
-    CardContent, CardMedia, Collapse,
+    CardContent, CardMedia, Collapse, IconButton,
 } from "@mui/material";
 
 
@@ -11,6 +12,19 @@ import "./../ProjectPanel.css"
 import {ButtonGroup} from "./ButtonGroup";
 import {TitlePanel} from "./TitlePanel";
 import {DescriptionPanel} from "./DescriptionPanel";
+import TableRow from "@mui/material/TableRow";
+import {ProjectInformationImage} from "./ProjectInformationImage";
+import TableCell from "@mui/material/TableCell";
+import {CVEntryEducation} from "../../cv_table/parts/CVEntryEducation";
+import {
+    EducationAdditionalInformation,
+    OthersAdditionalInformation,
+    WorkAdditionalInformation
+} from "../../cv_table/types";
+import {CVEntryWork} from "../../cv_table/parts/CVEntryWork";
+import {CVEntryOthers} from "../../cv_table/parts/CVEntryOthers";
+import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
+import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 
 
 export const ProjectInformation: React.FC<{ project: Project }> = ({project}) => {
@@ -21,33 +35,31 @@ export const ProjectInformation: React.FC<{ project: Project }> = ({project}) =>
     };
     return (
         <>
-            <Card className={"project-card"}>
+            <TableRow sx={{'& > *': {borderBottom: 'unset'}}}>
+                <TableCell>
+                    <ProjectInformationImage project={project}/>
+                </TableCell>
 
-                <CardMedia
-                    className={"project-card-image"}
-                    component="img"
-                    image={"TODO"}
-                    alt="Preview of the project"
-                />
-
-                <CardContent key={"a"} className={"project-card-title"}>
+                <TableCell>
                     <TitlePanel title={project.title} url={project.url}/>
-                </CardContent>
+                </TableCell>
 
-                <CardContent key={"b"} sx={{padding:"8px"}} className={"project-card-technologies"}>
+                <TableCell>
                     <TechGroup technologies={project.techs}/>
-                </CardContent>
+                </TableCell>
 
-                <CardActions sx={{padding:"8px"}} className={"project-card-buttons"} disableSpacing>
+                <TableCell>
                     <ButtonGroup expanded={expanded} handleExpandClick={handleExpandClick}/>
-                </CardActions>
+                </TableCell>
+            </TableRow>
 
-                <Collapse className={"project-card-expand"}  in={expanded} timeout="auto" unmountOnExit>
-                    <CardContent sx={{padding:"8px !important"}}>
+            <TableRow>
+                <TableCell style={{paddingBottom: 0, paddingTop: 0}} colSpan={6}>
+                    <Collapse in={expanded} timeout="auto" unmountOnExit>
                         <DescriptionPanel description={project.description}/>
-                    </CardContent>
-                </Collapse>
-            </Card>
+                    </Collapse>
+                </TableCell>
+            </TableRow>
         </>
     )
 }
