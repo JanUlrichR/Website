@@ -56,7 +56,7 @@ const fetchProjectsMock = async (): Promise<Project[]> => {
             title: "Website2",
             url: "https://example.com",
             description: "A smaller website",
-            previewImage: "https://mui.com/static/logo.png",
+            previewImage: "https://upload.wikimedia.org/wikipedia/commons/2/2c/Rotating_earth_%28large%29.gif",
             techs: [
                 {
                     name: "Material UI",
