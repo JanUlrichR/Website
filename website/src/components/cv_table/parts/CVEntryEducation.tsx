@@ -1,9 +1,7 @@
 import React from "react";
 import {EducationAdditionalInformation} from "../types";
-import TableCell from "@mui/material/TableCell";
 import fileDownload from 'js-file-download'
 import SimCardDownloadIcon from '@mui/icons-material/SimCardDownload';
-import SchoolIcon from "@mui/icons-material/School";
 
 export const CVEntryEducation: React.FC<{title:string,description:string,educationInformation: EducationAdditionalInformation}> = ({title, description,educationInformation}) => {
 
