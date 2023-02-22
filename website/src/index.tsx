@@ -7,6 +7,7 @@ import {ProjectPanel} from "./components/project_panel/ProjectPanel";
 import {TitleText} from "./components/title_text/TitleText";
 import {CVTable} from "./components/cv_table/CVTable";
 import {SkillsComponent} from "./components/skills_component/SkillsComponent";
+import {BackgroundBlob} from "./components/background_blob/BackgroundBlob";
 
 const root = ReactDOM.createRoot(
     document.getElementById('root') as HTMLElement
@@ -17,6 +18,7 @@ const queryClient = new QueryClient()
 root.render(
     <React.StrictMode>
         <QueryClientProvider client={queryClient}>
+            <BackgroundBlob/>
             <TitleText/>
             <SkillsComponent/>
             <CVTable/>

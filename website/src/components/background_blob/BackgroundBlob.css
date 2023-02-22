@@ -1,0 +1,38 @@
+.movingBackgroundBlob {
+    background: linear-gradient(to bottom right, black, lightgray);
+    height: 500px;
+    aspect-ratio: 1;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    translate: -50% -50%;
+    border-radius: 50%;
+    animation: rotate 20s infinite;
+    z-index: -6;
+    filter: blur(200px);
+    overflow: hidden;
+}
+
+.movingBackgroundBlur {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index:-5;
+    backdrop-filter: blur(200px);
+}
+
+html, body {margin: 0; overflow-x: hidden}
+
+@keyframes rotate {
+    from {
+        rotate: 0deg;
+    }
+
+    50% {
+        scale: 1 1.5;
+    }
+
+    to {
+        rotate: 360deg;
+    }
+}
