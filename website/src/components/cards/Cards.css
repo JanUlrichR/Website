@@ -1,0 +1,80 @@
+:root {
+
+}
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    gap: 0.5rem;
+
+    padding: 2rem;
+    --xpos: 150px;
+    --ypos: 150px;
+    --cardbackground:#161b22;
+    --lightcolor: rgba(46, 160, 67, 0.2);
+    --bordercolor: rgb(0, 255, 48);
+}
+
+.card {
+    border-radius: 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    transition: all 0.15s;
+}
+
+.card::before {
+    content: "";
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: inherit;
+    background: radial-gradient(
+            100rem circle at var(--xpos) var(--ypos),
+            var(--lightcolor),
+            transparent 20%);
+    opacity: 0;
+    transition: all 0.15s ease-in-out;
+}
+
+.card:hover:before {
+    opacity: 1;
+}
+
+.card:hover {
+    transform: scale(0.98);
+}
+
+.cards:hover .card-border   {
+    background: radial-gradient(
+            100rem circle at var(--xpos) var(--ypos),
+            --bordercolor
+            transparent 15%);
+}
+
+.card-border {
+    border-radius: inherit;
+    transition: all 0.25s;
+    padding: 0.1rem;
+}
+
+.card-content {
+    background-color: var(--cardbackground);
+    border-radius: inherit;
+    transition: all 0.25s;
+    padding: 0.2rem;
+}
+
+
+
+
+
+
+
