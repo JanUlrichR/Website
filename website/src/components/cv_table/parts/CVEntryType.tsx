@@ -10,10 +10,10 @@ import "./../CVTable.css"
 const getIcon = (workstationType: WorkStationType) => {
     switch (workstationType) {
         case "Education":
-            return <Tooltip title={"Education"}><SchoolIcon/></Tooltip>
+            return <Tooltip title={"Education"}><SchoolIcon color={"primary"}/></Tooltip>
         case "Work":
             return (
-                <Tooltip title={"Work Experience"}><BusinessCenterIcon/></Tooltip>)
+                <Tooltip title={"Work Experience"}><BusinessCenterIcon  color={"primary"}/></Tooltip>)
         case "Others":
             return <SchoolIcon/>
     }

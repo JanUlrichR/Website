@@ -19,7 +19,7 @@ export const ProjectInformation: React.FC<{ project: Project }> = ({project}) =>
         setExpanded(val => !val);
     };
     return (
-        <>
+        <div style={{overflow:"visible"}}>
             <TableRow sx={{'& > *': {borderBottom: 'unset'}}}>
                 <TableCell>
                     <ProjectInformationImage project={project}/>
@@ -45,6 +45,6 @@ export const ProjectInformation: React.FC<{ project: Project }> = ({project}) =>
                     </Collapse>
                 </TableCell>
             </TableRow>
-        </>
+        </div>
     )
 }

@@ -82,6 +82,30 @@ const fetchProjectsMock = async (): Promise<Project[]> => {
                     name: "ReactQuery",
                     link: "https://example.com",
                     icon: "https://seeklogo.com/images/R/react-query-logo-1340EA4CE9-seeklogo.com.png",
+                },{
+                    name: "Material UI",
+                    link: "https://example.com",
+                    icon: "https://mui.com/static/logo.png",
+                }, {
+                    name: "ReactQuery",
+                    link: "https://example.com",
+                    icon: "https://seeklogo.com/images/R/react-query-logo-1340EA4CE9-seeklogo.com.png",
+                }, {
+                    name: "Material UI",
+                    link: "https://example.com",
+                    icon: "https://mui.com/static/logo.png",
+                }, {
+                    name: "ReactQuery",
+                    link: "https://example.com",
+                    icon: "https://seeklogo.com/images/R/react-query-logo-1340EA4CE9-seeklogo.com.png",
+                }, {
+                    name: "Material UI",
+                    link: "https://example.com",
+                    icon: "https://mui.com/static/logo.png",
+                }, {
+                    name: "ReactQuery",
+                    link: "https://example.com",
+                    icon: "https://seeklogo.com/images/R/react-query-logo-1340EA4CE9-seeklogo.com.png",
                 }
             ]
         }
@@ -105,7 +129,7 @@ export const ProjectPanel: React.FC<{}> = () => {
     return (
         <div className={"project-panel"}>
             <Gallery id={"project-gallery"}>
-                <TableContainer component={Paper}>
+                <TableContainer component={Paper} style={{overflow:"visible"}}>
                     <Table aria-label="collapsible table">
                         <TableHead>
                             <TableRow>

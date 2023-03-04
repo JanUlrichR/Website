@@ -3,8 +3,6 @@ import {useQuery} from "react-query";
 import TableContainer from "@mui/material/TableContainer";
 import Paper from "@mui/material/Paper";
 import Table from "@mui/material/Table";
-import TableHead from "@mui/material/TableHead";
-import TableRow from "@mui/material/TableRow";
 import TableBody from "@mui/material/TableBody";
 import {Skill} from "./types";
 import {SkillsComponentRow} from "./parts/SkillsComponentRow";
@@ -118,10 +116,10 @@ const batchSkills = (skills: Skill[], size: number): Skill[][] => {
 
 const skillsPerRow = 5
 
-export const defaultFilterFunction = (skill: Skill) => true
+export const defaultFilterFunction = (_: Skill) => true
 export type FilterFunction = typeof defaultFilterFunction
 
-export const SkillsComponent: React.FC<{}> = () => {
+export const SkillsComponent: React.FC = () => {
 
     const {isLoading, isError, data, error} = useQuery<Skill[], Error>('skills', fetchSkills)
 

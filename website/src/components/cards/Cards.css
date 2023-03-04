@@ -16,7 +16,7 @@
     --ypos: 150px;
     --cardbackground:#161b22;
     --lightcolor: rgba(46, 160, 67, 0.2);
-    --bordercolor: rgb(0, 255, 48);
+    --bordercolor: rgba(46, 160, 67, 0.2);
 }
 
 .card {
@@ -42,6 +42,7 @@
             transparent 20%);
     opacity: 0;
     transition: all 0.15s ease-in-out;
+    pointer-events: none
 }
 
 .card:hover:before {

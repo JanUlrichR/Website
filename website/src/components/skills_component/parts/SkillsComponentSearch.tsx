@@ -20,7 +20,7 @@ export const SkillsComponentSearch: React.FC<{ setSearchFilter: (filterFunction:
     return (
         <>
             <Box sx={{display: 'flex', alignItems: 'flex-end'}}>
-                <SearchIcon sx={{color: 'action.active', mr: 1, my: 0.5}}/>
+                <SearchIcon color={"primary"} sx={{mr: 1, my: 0.5}}/>
                 <TextField id="input-with-sx" label="Search" variant="standard" value={searchText}
                            onChange={(e) => onTextChange(e.target.value)}/>
             </Box>

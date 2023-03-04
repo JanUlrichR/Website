@@ -78,13 +78,13 @@ const SkillAvatar: React.FC<{ skill: Skill }> = ({skill}) => {
                                 objectFit: "contain"
                             }
                         }}>
-                            <div>{skill.tech.name}</div>
+                            <Typography>{skill.tech.name}</Typography>
                         </Avatar>
                     </StyledBadge>
                 </a>
             </Tooltip>
             <Tooltip title={tooltipText} arrow>
-                <div>{skill.tech.name}</div>
+                <Typography>{skill.tech.name}</Typography>
             </Tooltip>
         </>
     )

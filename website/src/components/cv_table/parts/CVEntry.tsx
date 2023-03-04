@@ -38,7 +38,7 @@ export const CVEntry: React.FC<{ workstation: WorkStation }> = ({workstation}) =
                         size="small"
                         onClick={() => setOpen(!open)}
                     >
-                        {open ? <KeyboardArrowUpIcon/> : <KeyboardArrowDownIcon/>}
+                        {open ? <KeyboardArrowUpIcon color={"primary"}/> : <KeyboardArrowDownIcon color={"primary"}/>}
                     </IconButton>
                 </TableCell>
             </TableRow>

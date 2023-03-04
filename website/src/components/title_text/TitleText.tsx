@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {wait} from "@testing-library/user-event/dist/utils";
+import {Typography} from "@mui/material";
 
 const prefixText = "This is ";
 const alternatives = [
@@ -50,7 +51,8 @@ export const TitleText: React.FC<{}> = () => {
 
     return (
         <div className={"title-text"}>
-            {prefixText + hackyText}
+            <Typography variant={"h3"}>{prefixText}</Typography>
+            <Typography variant={"h4"}color={"primary"}>{hackyText}</Typography>
         </div>
     )
 }
